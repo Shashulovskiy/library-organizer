@@ -1,0 +1,45 @@
+.tableTitle {
+    text-align: center;
+    font-size: 3rem;
+}
+
+.container{
+    margin-top: 5%;
+    margin-bottom: 5%;
+    height: 70%;
+}
+.form {
+    padding: 5%;
+    box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
+}
+.form .inner {
+    padding: 2%;
+}
+.form h3{
+    text-align: center;
+    color: #333;
+}
+.container form{
+    padding: 10%;
+}
+.btnSubmit
+{
+    width: 30%;
+    border-radius: 1rem;
+    padding: 1.5%;
+    border: none;
+    cursor: pointer;
+}
+.form .btnSubmit{
+    font-weight: 600;
+    margin-top: 7%;
+    color: #fff;
+    background-color: #0062cc;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.form-group {
+    padding: 0.2rem;
+}
