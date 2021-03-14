@@ -7,6 +7,9 @@ import javax.persistence.*;
 @MappedSuperclass
 @Data
 @Inheritance
+@Table(
+        uniqueConstraints = @UniqueConstraint(columnNames = "login")
+)
 public class Person {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

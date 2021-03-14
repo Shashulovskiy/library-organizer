@@ -6,6 +6,10 @@ import javax.persistence.*;
 
 @Entity
 @Data
+@Table(
+        indexes = {@Index(columnList = "title"), @Index(columnList = "author"), @Index(columnList = "reader_id")},
+        uniqueConstraints = @UniqueConstraint(columnNames = "hash")
+)
 public class Book {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -20,5 +24,6 @@ public class Book {
 
     private Boolean isClaimed;
 
+    @Column(name = "hash")
     private Long hash;
 }
