@@ -10,7 +10,7 @@ import javax.persistence.*;
         indexes = {@Index(columnList = "title"), @Index(columnList = "author"), @Index(columnList = "reader_id")},
         uniqueConstraints = @UniqueConstraint(columnNames = "hash")
 )
-public class Book {
+public class Book implements Comparable<Book> {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
@@ -26,4 +26,9 @@ public class Book {
 
     @Column(name = "hash")
     private Long hash;
+
+    @Override
+    public int compareTo(final Book o) {
+        return id.compareTo(o.id);
+    }
 }

@@ -25,7 +25,7 @@
     <tr th:if="${#lists.isEmpty(reader.books)}" class="blank_row">
         <td colspan="4">No books. Claim some down below.</td>
     </tr>
-    <tr th:unless="${#lists.isEmpty(reader.books)}" th:each="book : ${reader.books}">
+    <tr th:unless="${#lists.isEmpty(reader.books)}" th:each="book : ${#lists.sort(reader.books)}">
         <th scope="row" th:text="${book.id}">ID</th>
         <td th:text="${book.title}">Title</td>
         <td th:text="${book.author}">Author</td>

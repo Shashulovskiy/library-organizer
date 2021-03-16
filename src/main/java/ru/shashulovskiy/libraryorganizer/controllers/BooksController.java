@@ -2,6 +2,7 @@ package ru.shashulovskiy.libraryorganizer.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import ru.shashulovskiy.libraryorganizer.domain.Book;
@@ -53,7 +54,7 @@ public class BooksController extends AbstractPageController {
         }
     }
 
-    @PostMapping("/books/get")
+    @GetMapping("/books/get")
     public String getBook(@ModelAttribute("hash") Long hash, HttpSession session, Model model) {
         if (isAuthorizedLibrarian(session)) {
             model.addAttribute("librarian", getLibrarian(session));
