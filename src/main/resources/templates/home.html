@@ -55,7 +55,10 @@
         </tr>
         </thead>
         <tbody>
-        <tr th:each="book : ${availableBooks}">
+        <tr th:if="${#lists.isEmpty(availableBooks)}" class="blank_row">
+            <td colspan="4">No books available at the moment.</td>
+        </tr>
+        <tr th:unless="${#lists.isEmpty(availableBooks)}" th:each="book : ${availableBooks}">
             <th scope="row" th:text="${book.id}">ID</th>
             <td th:text="${book.title}">Title</td>
             <td th:text="${book.author}">Author</td>
